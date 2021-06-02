@@ -9,8 +9,9 @@ function App() {
     <div className="App">
       <NavBar/>
       <Jumbo/>
-      <Header/>
       <Players/>
+      <Header/>
+      
     </div>
   );
 }
