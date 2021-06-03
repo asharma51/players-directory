@@ -8,6 +8,7 @@ import {
     Button,
     ButtonGroup} from 'reactstrap';
 import './Player.css';
+import { deletePlayer } from '../service';
 
 const buttons = (view, id) => {
     if(!view){
@@ -19,7 +20,10 @@ const buttons = (view, id) => {
         return(
             <ButtonGroup>
                 <Button color="outline-info">Edit Player</Button>
-                <Button color="outline-danger">Delete Player</Button>
+                <Button color="outline-danger" onClick={()=> deletePlayer(id).then(res=>{
+                    window.location="/players";
+                }
+                )}>Delete Player</Button>
             </ButtonGroup>
         )
     }
@@ -30,9 +34,9 @@ const Example = (props) =>{
             <Card className="Player">
                 <CardImg top height="180px" width="100px" src={props.player.imageURL} alt="Player Image" />
                 <CardBody>
-                <CardTitle tag="h5">{props.player.id}. {props.player.name}</CardTitle>
-                <CardSubtitle tag="h6" className="mb-2 text-muted">{props.player.country}</CardSubtitle>
-                {buttons(props.view, props.player.id)}
+                    <CardTitle tag="h5">{props.player.id}. {props.player.name}</CardTitle>
+                    <CardSubtitle tag="h6" className="mb-2 text-muted">{props.player.country}</CardSubtitle>
+                    {buttons(props.view, props.player.id)}
                 </CardBody>
             </Card>
         </div>

@@ -50,18 +50,11 @@ export default class AppNavbar extends Component {
 							<UncontrolledDropdown nav inNavbar>
 								<DropdownToggle nav caret>
 									Options
-                </DropdownToggle>
+                				</DropdownToggle>
 								<DropdownMenu right>
 									<DropdownItem >
 										Create Player
-                  </DropdownItem>
-									<DropdownItem>
-										Option 2
-                  </DropdownItem>
-									<DropdownItem divider />
-									<DropdownItem>
-										Reset
-                  </DropdownItem>
+                  					</DropdownItem>
 								</DropdownMenu>
 							</UncontrolledDropdown>
 						</Nav>

@@ -31,7 +31,7 @@ export default class Players extends Component{
           <CardGroup>
             {this.state.playersList.map((plr, index) => 
               <Player key = {index} player = {plr}/>
-              )}
+            )}
           </CardGroup>
       </Container>
     )

@@ -1,13 +1,15 @@
 import axios from 'axios';
 
-const http = axios.create({
-    baseURL: 'http://localhost:8080/plr_directory/'
-})
+const baseURL = 'http://localhost:8080/plr_directory';
 
 export function getPlayers(){
-    return http.get('/players');
+    return axios.get(`${baseURL}/players`);
 }
 
 export function getPlayerByID(id){
-    return http.get('/players/'+id);
+    return axios.get(`${baseURL}/players/${id}`);
+}
+
+export function deletePlayer(id){
+    return axios.delete(`${baseURL}/players/${id}`);
 }
