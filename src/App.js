@@ -1,18 +1,21 @@
 import './App.css';
 import Header from './components/Header';
 import Players from './components/Players';
-import NavBar from './components/NavBar';
-import Jumbo from './components/Jumbotron';
+import Home from './components/Home';
+import {
+  BrowserRouter as Router,
+  Route
+} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <NavBar/>
-      <Jumbo/>
-      <Players/>
-      <Header/>
-      
-    </div>
+    <Router>
+      <div>
+          <Header/>
+          <Route path="/" exact component={Home}/>
+          <Route path="/players" exact component={Players}/>
+      </div>
+    </Router>
   );
 }
 
