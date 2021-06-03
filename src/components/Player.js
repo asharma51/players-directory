@@ -2,12 +2,12 @@ import React from 'react';
 import {
     Card, 
     CardImg, 
-    CardText, 
     CardBody,
     CardTitle, 
     CardSubtitle, 
     Button,
     ButtonGroup} from 'reactstrap';
+import './Player.css';
 
 const buttons = (view, id) => {
     if(!view){
@@ -27,12 +27,11 @@ const buttons = (view, id) => {
 const Example = (props) =>{
     return (
         <div>
-            <Card>
-                <CardImg top width="100%" src={props.player.imageURL} alt="Card image cap" />
+            <Card className="Player">
+                <CardImg top height="180px" width="100px" src={props.player.imageURL} alt="Player Image" />
                 <CardBody>
                 <CardTitle tag="h5">{props.player.id}. {props.player.name}</CardTitle>
                 <CardSubtitle tag="h6" className="mb-2 text-muted">{props.player.country}</CardSubtitle>
-                {/* <CardText>{props.player.id}</CardText> */}
                 {buttons(props.view, props.player.id)}
                 </CardBody>
             </Card>

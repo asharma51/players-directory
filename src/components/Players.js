@@ -1,4 +1,4 @@
-import {CardGroup} from 'reactstrap';
+import {CardGroup, Container} from 'reactstrap';
 import Player from './Player';
 import { React, Component } from 'react';
 import {getPlayers} from '../service';
@@ -27,12 +27,13 @@ export default class Players extends Component{
 
   render(){
     return(
-      <CardGroup>
-        {this.state.playersList.map((plr, index) => 
-          <Player key = {index} player = {plr}/>
-        )
-        }
-      </CardGroup>
+      <Container fluid>
+          <CardGroup>
+            {this.state.playersList.map((plr, index) => 
+              <Player key = {index} player = {plr}/>
+              )}
+          </CardGroup>
+      </Container>
     )
   }
 }

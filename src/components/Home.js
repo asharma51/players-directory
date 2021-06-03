@@ -6,7 +6,6 @@ const Example = (props) => {
   return (
     <Jumbotron fluid className="bg-danger border border-dark text-light">
       <Container fluid className="home-margin">
-        {/* <Jumbotron fluid className="bg-danger border border-dark text-light"> */}
           <h1 className="display-3">Players Directory Application</h1>
           <p className="blockquote">Implemented using <span className="text-dark"><b>React</b></span> backed by <span className="text-dark"><b>postgreSQL</b></span></p>
           <hr className="my-2" />
