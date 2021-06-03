@@ -1,15 +1,21 @@
 import React from 'react';
-import { Jumbotron} from 'reactstrap';
+import { Jumbotron, Container} from 'reactstrap';
+import './Home.css';
 
 const Example = (props) => {
   return (
-    <div>
-      <Jumbotron>
-        <h1 className="display-3">Tennis Players Directory Application</h1>
-        <p className="lead">Implemented using React</p>
-        <p>This is a simple React application for creating, reading, updating and deleting players.</p>
+    <Jumbotron fluid className="bg-danger border border-dark text-light">
+      <Container fluid className="home-margin">
+        {/* <Jumbotron fluid className="bg-danger border border-dark text-light"> */}
+          <h1 className="display-3">Players Directory Application</h1>
+          <p className="blockquote">Implemented using <span className="text-dark"><b>React</b></span> backed by <span className="text-dark"><b>postgreSQL</b></span></p>
+          <hr className="my-2" />
+          <p>This is a simple directory application for creating, reading, updating and deleting players.</p>
+          {/* <p className="lead">
+            <Button color="dark">Learn More</Button>
+          </p> */}
+        </Container>
       </Jumbotron>
-    </div>
   );
 };
 
