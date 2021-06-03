@@ -7,3 +7,7 @@ const http = axios.create({
 export function getPlayers(){
     return http.get('/players');
 }
+
+export function getPlayerByID(id){
+    return http.get('/players/'+id);
+}

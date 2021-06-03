@@ -10,16 +10,6 @@ import {getPlayers} from '../service';
 //     {id: 4, name: 'Venus Williams', country: 'United States'}
 // ];
 
-// const Players = PlayersList.map((plr) => (
-//   <Player plr = {plr}/>
-// ));
-
-// const Example = () =>{
-//     return <CardGroup>{Players}</CardGroup>
-// };
-
-// export default Example;
-
 export default class Players extends Component{
   constructor(props){
     super(props);
@@ -31,7 +21,6 @@ export default class Players extends Component{
   componentDidMount(){
     getPlayers().then(res =>{
       this.setState({playersList: res.data});
-      console.log("resource loading");
       console.log(res);
     });
   }
