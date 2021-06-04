@@ -21,3 +21,12 @@ export function createPlayer(player){
         }
     });
 }
+
+export function updatePlayer(player){
+    return axios.patch(`${baseURL}/players/${player.id}`, player,{
+        headers:{
+            'Content-Type': `Application/json`
+        }
+    });
+}
+

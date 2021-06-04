@@ -16,23 +16,25 @@ import {
 	ModalBody
 } from 'reactstrap';
 import CreatePlayerForm from './CreatePlayer';
+import '../style/Stylesheet.css';
 
 export default class AppNavbar extends Component {
 	constructor(props) {
 		super(props);
-
-		this.toggle = this.toggle.bind(this);
-		this.toggleCreatePlayerModal = this.toggleCreatePlayerModal.bind(this);
 		this.state = {
 			isOpen: false,
 			modal: false
 		};
+		this.toggle = this.toggle.bind(this);
+		this.toggleCreatePlayerModal = this.toggleCreatePlayerModal.bind(this);
 	}
+
 	toggle() {
 		this.setState({
 			isOpen: !this.state.isOpen
 		});
 	}
+
 	toggleCreatePlayerModal() {
 		this.setState({ modal: !this.state.modal })
 	}
@@ -41,7 +43,7 @@ export default class AppNavbar extends Component {
 		return (
 			<div>
 				<Navbar color="dark" fixed="top" dark expand="md">
-					<NavbarBrand href="/"><img src="/assets/logo.jpg" alt="logo for players directory app" className="logo" />Players Directory</NavbarBrand>
+					<NavbarBrand className="header-brand" href="/"><b>Players Directory</b></NavbarBrand>
 					<NavbarToggler onClick={this.toggle} />
 					<Collapse isOpen={this.state.isOpen} navbar>
 						<Nav className="ml-auto" navbar>

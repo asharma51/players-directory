@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
-import { createPlayer } from '../service';
+import { updatePlayer } from '../service';
 import '../style/Stylesheet.css';
 
-export default class CreatePlayer extends Component{
+export default class UpdatePlayer extends Component{
     constructor(props){
         super(props);
         this.state = {
-            id:0,
-            name: '',
-            country: '',
-            imageURL: ''
+            id: props.player.id,
+            name: props.player.name,
+            country: props.player.country,
+            imageURL: props.player.imageURL
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -32,10 +32,9 @@ export default class CreatePlayer extends Component{
             imageURL: this.state.imageURL
         }
         
-        createPlayer(player).then(res =>{
-            console.log(`Created player: ${player.name}`);
-            alert('Player created successfully!!');
-            window.location="/players";
+        updatePlayer(player).then(res =>{
+            alert('Player updated successfully!!');
+            window.location=`/players/${player.id}`;
         })
     }
 
@@ -62,7 +61,7 @@ export default class CreatePlayer extends Component{
                     <Input type="text" name="imageURL" id="playerImage" placeholder="Enter Player Image URL" 
                     value={this.state.imageURL} onChange = {this.handleChange}></Input>
                 </FormGroup>
-                <Button className="button-form" type="submit" color="danger">Create Player</Button>
+                <Button className="button-form" type="submit" color="danger">Save Player</Button>
             </Form>
         )
     }
