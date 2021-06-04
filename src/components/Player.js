@@ -21,6 +21,7 @@ const buttons = (view, id) => {
             <ButtonGroup>
                 <Button color="outline-info">Edit Player</Button>
                 <Button color="outline-danger" onClick={()=> deletePlayer(id).then(res=>{
+                    alert('Player deleted successfully!!');
                     window.location="/players";
                 }
                 )}>Delete Player</Button>

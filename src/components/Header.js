@@ -1,17 +1,21 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
+	Collapse,
+	Navbar,
+	NavbarToggler,
+	NavbarBrand,
+	Nav,
+	NavItem,
+	NavLink,
+	UncontrolledDropdown,
+	DropdownToggle,
+	DropdownMenu,
+	DropdownItem,
+	Modal, 
+	ModalHeader, 
+	ModalBody
 } from 'reactstrap';
+import CreatePlayerForm from './CreatePlayer';
 
 export default class AppNavbar extends Component {
 	constructor(props) {
@@ -52,14 +56,19 @@ export default class AppNavbar extends Component {
 									Options
                 				</DropdownToggle>
 								<DropdownMenu right>
-									<DropdownItem >
-										Create Player
+									<DropdownItem onClick={this.toggleCreatePlayerModal}>
+										Create New Player
                   					</DropdownItem>
 								</DropdownMenu>
 							</UncontrolledDropdown>
 						</Nav>
 					</Collapse>
-				
+					<Modal isOpen={this.state.modal} toggle={this.toggleCreatePlayerModal}>
+						<ModalHeader >Create New Player</ModalHeader>
+						<ModalBody>
+							 <CreatePlayerForm/>
+        				</ModalBody>
+					</Modal>
 				</Navbar>
 			</div>
 		);

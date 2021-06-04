@@ -13,3 +13,11 @@ export function getPlayerByID(id){
 export function deletePlayer(id){
     return axios.delete(`${baseURL}/players/${id}`);
 }
+
+export function createPlayer(player){
+    return axios.post(`${baseURL}/players`, player,{
+        headers:{
+            'Content-Type': `Application/json`
+        }
+    });
+}

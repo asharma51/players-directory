@@ -16,7 +16,7 @@ export default class ViewPlayer extends Component{
                 player: res.data
             });
             console.log(this.state.player);
-            console.log('componentDisMount id = '+this.props.match.params.id);
+            console.log('componentDidMount id = '+this.props.match.params.id);
         })
     }
 
