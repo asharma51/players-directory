@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const baseURL = 'http://localhost:8080/plr_directory';
+// const baseURL = 'http://localhost:8080/plr_directory';
+const baseURL = 'https://players-service.herokuapp.com/plr_directory';
 
 export function getPlayers(){
     return axios.get(`${baseURL}/players`);
